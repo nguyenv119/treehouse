@@ -20,29 +20,28 @@ body{
     background-image: url('images/forestBackground.jpg');
     background-size: cover;
     background-position: center;
+   
 }
 
 .container{
     padding: 10px 10%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 nav{
     display: flex;
     align-items: center;
-    top: 200px;
-    left: 200px;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    
 }
 
-.logo{
-    width: 140px;
-}
 
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    left: 1200px;
 }
 
 nav ul li a{
@@ -50,6 +49,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     position: relative;
+    left: 1200px;
 }
 
 nav ul li a::after{
@@ -94,6 +94,27 @@ nav ul li a:hover::after{
         blink-caret .75s step-end infinite;
 }
 
+/* Center the form and its container */
+.sub-title-container {
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+    max-width: 700px; /* Adjust the maximum width as needed */
+}
+
+h1.sub-title {
+    font-size: 80px; /* Change the font size as needed */
+    color: #fff; /* Change the text color as needed */
+}
+
+/* Style the textarea and button */
+textarea[name="Message"],
+button.btn.btn2 {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 
 /* The typing effect */
 @keyframes typing {
@@ -132,52 +153,52 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/* services section */
-#services{
+/* QBoard section */
+#QBoard{
     padding: 30px 0;
 }
 
-.services-list {
+.QBoard-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 40px;
   margin-top: 20px;
 }
 
-.services-list .box1 {
+.QBoard-list .box1 {
     background: #e4b976;
     color: #65451d;
 }
 
 /* Box 2 */
-.services-list .box2 {
+.QBoard-list .box2 {
     background: #aebbba;
     color: #3a4444;
 }
 
 /* Box 3 */
-.services-list .box3 {
+.QBoard-list .box3 {
     background: #bbb2ce;
     color: #453b60;
 }
 
-.services-list .box4 {
+.QBoard-list .box4 {
     background: #b97c82;
     color: #453b60;
 }
 
-.services-list .box5 {
+.QBoard-list .box5 {
     background: #779CDB;
     color: #112342;
 }
 
-.services-list .box6 {
+.QBoard-list .box6 {
     background: #A5CBAF;
     color: #233D2A;
 }
 
 /* Common styles for all boxes */
-.services-list div {
+.QBoard-list div {
     padding: 40px;
     font-size: 18px;
     font-weight: 300;
@@ -185,18 +206,18 @@ nav ul li a:hover::after{
     transition: background 0.5s, transform 0.5s;
 }
 
-.services-list div i{
+.QBoard-list div i{
     font-size: 50px;
     margin-bottom: 30px;
 }
 
-.services-list div h2{
+.QBoard-list div h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.services-list div a{
+.QBoard-list div a{
     text-decoration: none;
     color: #fff;
     font-size: 18px;
@@ -205,7 +226,7 @@ nav ul li a:hover::after{
     text-decoration: underline;
 }
 
-.services-list div:hover{
+.QBoard-list div:hover{
     background: #ff004f;
     transform: translateY(-10px);
 }
@@ -252,7 +273,8 @@ nav ul li a:hover::after{
 
 .btn.btn2{
     display: inline-block;
-    background: #ff004f;
+    background: #080808;
+    border-color: #779CDB;
 }
 
 .contact-right form{
