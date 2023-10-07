@@ -1,0 +1,77 @@
+/* services section */
+#services{
+    padding: 30px 0;
+}
+
+.serviceList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 40px;
+  margin-top: 20px;
+}
+
+.serviceList .box1 {
+    background: #e4b976;
+    color: #65451d;
+}
+
+/* Box 2 */
+.serviceList .box2 {
+    background: #aebbba;
+    color: #3a4444;
+}
+
+/* Box 3 */
+.serviceList .box3 {
+    background: #bbb2ce;
+    color: #453b60;
+}
+
+.serviceList .box4 {
+    background: #b97c82;
+    color: #453b60;
+}
+
+.serviceList .box5 {
+    background: #779CDB;
+    color: #112342;
+}
+
+.serviceList .box6 {
+    background: #A5CBAF;
+    color: #233D2A;
+}
+
+/* Common styles for all boxes */
+.serviceList div {
+    padding: 40px;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.serviceList div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.serviceList div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.serviceList div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.serviceList div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
