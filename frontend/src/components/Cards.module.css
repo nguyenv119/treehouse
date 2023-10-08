@@ -1,5 +1,6 @@
 .container{
 	padding-top: 100px;
+    background-color: #FAF9F6;
 }
 .title{
 	font-size: 40px;
@@ -11,12 +12,18 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	grid-gap: 40px;
-	padding: 5%;
+	padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 5%;
 }
 
 .serviceList .box1 {
     background: #e4b976;
     color: #65451d;
+
+    /* background-color: #7a997c;
+    color: black; */
 }
 
 /* Box 2 */
@@ -68,7 +75,7 @@
 
 .serviceList div a{
     text-decoration: none;
-    color: #fff;
+    color: #FAF9F6;
     font-size: 18px;
     margin-top: 20px;
     display: inline-block;
@@ -76,7 +83,7 @@
 }
 
 .serviceList div:hover{
-    background: #fff;
+    background: #ffbb00;
     transform: translateY(-10px);
 	cursor: pointer;
 }

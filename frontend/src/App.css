@@ -11,8 +11,8 @@ html{
 }
 
 body{
-	/* background-color: 	#7a997c; */
-	background-color: 	#85a486;
+	/* background-color: 	#85a486; */
+	background-color: 	#7a997c;
 	
 }
 
@@ -41,7 +41,7 @@ p{
 	margin-bottom: 50px;
 }
 .learnMore{
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: 200;
 	color: dark-brown;
 	text-decoration: none;
@@ -50,7 +50,7 @@ p{
 .learnMore:hover{
 	cursor: pointer;
 	opacity: 0.7;
-}
+}	
 .arrowContainer{
 	position: absolute;
 	display: flex;
