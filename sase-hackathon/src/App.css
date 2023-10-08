@@ -23,7 +23,7 @@ body{
 }
 .container{
 	margin-left: 80px;
-	margin-top: 350px;
+	margin-top: 400px;
 }
 .logo{
 	font-size: 80px;
@@ -70,6 +70,7 @@ body{
 	top: -20px;
 	left: 0%;
 	z-index: -1; /* Place the video behind other content */
+	margin-top: 5%;
   }
 
 
