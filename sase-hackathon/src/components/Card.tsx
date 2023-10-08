@@ -4,9 +4,10 @@ export default function Card() {
 	return (
 		<>
 			<div className={styles.container} id="services">
-    			<div className={styles.serviceList}>
-					
-					
+				<div className={styles.serviceList}>
+
+
+
 
 					<div className={styles.box1}>
 						{/* <i className="fa-solid fa-car"></i> */}

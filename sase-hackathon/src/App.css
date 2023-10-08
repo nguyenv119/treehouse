@@ -16,8 +16,7 @@ html{
 }
 
 body{
-    background: #080808;
-    color: #fff;
+	background-color: 	#d0e6a6;
 }
 
 /* ----------------- Landing Page ----------------- */
@@ -25,6 +24,14 @@ body{
 	height: 100vh;
 	width: 100%;
 }
-
+.container{
+	margin-left: 80px;
+	margin-top: 350px;
+}
+.logo{
+	font-size: 60px;
+	font-weight: 400;
+	color: dark-brown;
+}
 
 
