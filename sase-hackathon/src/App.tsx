@@ -1,8 +1,9 @@
 
+import './App.css'
+import { useRef } from 'react'
+import { HiArrowSmDown } from 'react-icons/hi'
 import Card from './components/Card'
 import Header from './components/Header'
-import './App.css'
-import { HiArrowSmDown } from 'react-icons/hi'
 import videoFile from './assests/Swing.mp4';
 
 function App() {
