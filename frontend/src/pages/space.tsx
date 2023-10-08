@@ -9,24 +9,24 @@ export default function Space() {
 	/** Determines if a message is mean or not */
 	async function isMean(content: string) {
 		try {
-			const response = await axios.post('https://api.openai.com/v1/engines/gpt-3.5-turbo/completions', {
+			const response = await axios.post('https://api.openai.com/v1/chat/completions', {
 				model: "gpt-3.5-turbo",
-				prompt: `Is the following content bullying or mean? Answer yes or no: "${content}"`,
-				max_tokens: 10,
+				messages: [
+					{"role": "user", "content": `Is the following content bullying or mean? Account for passive aggressiveness and sarcasm, and any type of mean content. Answer yes or no: "${content}"`}
+				]
 			}, {
 				headers: {
 					'Authorization': `Bearer ${(import.meta.env.VITE_OPENAI_API_KEY as string)}`,
 					'Content-Type': 'application/json'
 				}
-				
 			});
 		
 			/** Process the response to get the answer */
-			const answer = response.data.choices[0].text.trim().toLowerCase();
+			const answer = response.data.choices[0];
 			console.log(answer, content)
 			return answer === "yes";
 		} catch (error) {
-			console.error('Error calling the API', error);
+			console.error('Error calling the API:', error.response ? error.response.data : error);
 			return false;  // Default to not bullying if there's an error
 		}
 	}
