@@ -18,7 +18,7 @@ export default function Cards() {
 		<>
 			<div id='spaces'>
 				<div className={styles.container} id="services">
-					<h1 className={styles.title}>Welcome to our Safe Space</h1>
+					<h1 className={styles.title}>Welcome to our TreeHouses</h1>
 					<div className={styles.serviceList}>
 						<div className={styles.box1} onClick={handleClick}>
 							<h2><FaGraduationCap className="icon" /> Classes</h2>

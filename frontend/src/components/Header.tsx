@@ -27,7 +27,7 @@ export default function Header() {
                 <nav className={`${styles.navContainer} ${color ? styles['container-bg'] : ''}`}>
                     <ul id="sidemenu">
                         <li><a href="#home" >Home</a></li>
-                        <li><a href="#spaces">Spaces</a></li>
+                        <li><a href="#spaces">TreeHouses</a></li>
                         <li><a href="#info">Info</a></li>
                         <li><a href="#contact">Resources</a></li>
                     </ul>

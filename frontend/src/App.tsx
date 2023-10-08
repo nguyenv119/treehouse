@@ -40,7 +40,7 @@ function App() {
 						TreeHouse
 						</h1>
 					</div> 
-					<p>A space where you</p>
+					<p>Each TreeHouse is a safe space where you</p>
 					<p>- Feel safe expressing your emotions</p>
 					<p className='last'>- Other people relate to you</p>
 					<a href="#info" className='learnMore'>
@@ -49,7 +49,7 @@ function App() {
 					</a>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
-					<p>Join a Safe Space</p>
+					<p>Join a TreeHouse</p>
 					<HiArrowCircleDown className="arrowDown" />
 				</button>
 				<Chatbot />
