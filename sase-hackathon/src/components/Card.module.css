@@ -1,14 +1,12 @@
 /* services section */
-#services{
-    padding: 30px 0;
-}
-
 .serviceList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 40px;
   margin-top: 20px;
+  padding: 5%;
 }
+
 
 .serviceList .box1 {
     background: #e4b976;
@@ -72,6 +70,6 @@
 }
 
 .serviceList div:hover{
-    background: #ff004f;
+    background: #fff;
     transform: translateY(-10px);
 }
