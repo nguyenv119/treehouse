@@ -6,21 +6,17 @@
 .container {
     padding: 10px 10%;
     top: 10px;
-    left: 0%;
-    position: relative;
+    right: 0%;
+    position: fixed;
+   
 }
 
 .navContainer {
     display: flex;
-    top: 200px;
-    left: 80px;
     flex-wrap: wrap;
 }
 
 .header {
-    position: relative;
-    top: 0;
-    background-color: rgba(187, 181, 164, 0.5);
     padding-bottom: 1%;
 }
 

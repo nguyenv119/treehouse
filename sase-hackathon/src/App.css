@@ -22,8 +22,9 @@ body{
 	width: 100%;
 }
 .container{
-	margin-left: 80px;
-	margin-top: 400px;
+	position: absolute; /* or 'relative' depending on your layout needs */
+    left: 80px;
+    top: 350px;
 }
 .logo{
 	font-size: 80px;
@@ -67,7 +68,7 @@ body{
 	width: 50%;
 	height: auto;
 	position: absolute;
-	top: -20px;
+	top: -110px;
 	left: 0%;
 	z-index: -1; /* Place the video behind other content */
 	margin-top: 5%;
