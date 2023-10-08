@@ -36,8 +36,7 @@ function App() {
 				<div className="container">
 					<div>
 						<h1 className="logo">
-						{/* SafeSpace */}
-						SafeSpace
+						TreeHouse
 						</h1>
 					</div> 
 					<p>A space where you</p>
