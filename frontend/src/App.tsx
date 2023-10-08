@@ -36,7 +36,7 @@ function App() {
 				<div className="container">
 					<div>
 						<h1 className="logo">
-						<span className="custom-color">Safe</span>Space
+						SafeSpace
 						</h1>
 					</div> 
 					<p>A space where you</p>

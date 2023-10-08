@@ -76,6 +76,11 @@ p{
 	background-color: transparent;
 	border: none;	
 	border-bottom: 2px solid transparent;
+	background-color: #61714d;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 10px;
+	border-radius: 8px;
 }
 .arrowContainer:hover{
 	cursor: pointer;
