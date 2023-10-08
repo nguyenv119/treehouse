@@ -4,11 +4,10 @@
 }
 
 .container {
-    padding: 10px 10%;
+    padding: 7px 10%;
     top: 10px;
     right: 0%;
     position: fixed;
-   
 }
 
 .navContainer {
@@ -48,3 +47,7 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
+
+.scrolledHeader {
+    background-color: #333; 
+  }

@@ -25,7 +25,7 @@ while True:
     # Append user message to the messages
     messages.append({"role": "user", "content": user_message})
     
-    # Query the model
+    # Query the mode
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,

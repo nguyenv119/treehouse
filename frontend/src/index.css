@@ -2,6 +2,10 @@
  */
 }
 
+body {
+	background-color: #85a486;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }

@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Info from './components/Info'
 import ScrollToHashElement from './components/ScrollToHashElement'
 
+
 import videoFile from './assets/Swing.mp4';
 
 function App() {
@@ -33,14 +34,18 @@ function App() {
 			<Header />
 			<div className="hero" id='home'>
 				<div className="container">
-					<h1 className="logo">UBelong</h1>
+					<div>
+						<h1 className="logo">
+							SafeSpace
+						</h1>
+					</div> 
 					<p>A space where you</p>
 					<p>_ feel safe expressing your emotions</p>
 					<p className='last'>_ other people relate to you</p>
 					<a href="#info" className='learnMore'>Learn more....</a>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
-					<p>Join a safe space</p>
+					<p>Join a Safe Space</p>
 					<HiArrowSmDown className="arrow" />
 				</button>
 

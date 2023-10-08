@@ -7,8 +7,6 @@ import { FaUserFriends } from 'react-icons/fa';
 import { GiSuitcase } from 'react-icons/gi';
 import { BsQuestionLg } from 'react-icons/bs';
 
-
-
 export default function Cards() {
 	const navigate = useNavigate();
 
