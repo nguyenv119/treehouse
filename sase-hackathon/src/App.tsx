@@ -9,15 +9,23 @@ import videoFile from './assests/Swing.mp4';
 function App() {
 
 
-	// const cards = useRef(null);
-	// const Cards = forwardRef(function Cards(props, ref) {
-	// 	return (
-	// 		<label>
-	// 			{props.label}
-	// 			<input ref={ref} />
-	// 		</label>
-	// 	);
-	// });
+	const ref = useRef(null);
+
+	const CardsComponent = forwardRef<HTMLDivElement>((props, ref) => {
+		return (
+			<div ref={ref}>
+				<Cards />
+			</div>
+		);
+	});
+
+	function handleClick() {
+		ref.current.scrollIntoView({
+			behavior: 'smooth',
+			block: 'nearest',
+			inline: 'center'
+		});
+	}
 
 
 	// const titleRef = useRef<HTMLDivElement>(null);
@@ -52,9 +60,8 @@ function App() {
 				<div className="container">
 					<h1 className="logo">UBelong</h1>
 					<p>A space where you feel safe</p>
-
 				</div>
-				<button className="arrowContainer">
+				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a safe space</p>
 					<HiArrowSmDown className="arrow" />
 				</button>
@@ -64,7 +71,7 @@ function App() {
 					Your browser does not support the video tag.
 				</video>
 			</div>
-			<Cards />
+			<CardsComponent ref={ref} />
 		</>
 	)
 }
