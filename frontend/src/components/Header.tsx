@@ -6,7 +6,7 @@ export default function Header() {
 
     useEffect(() => {
         const changeColor = () => {
-            if (window.scrollY >= 950) {
+            if (window.scrollY >= 900) {
                 setColor(true);
             } else {
                 setColor(false);
@@ -23,8 +23,8 @@ export default function Header() {
 
     return (
         <div className={styles.header}>
-            <div className={`${styles.container} ${color ? styles['container-bg'] : ''}`}>
-                <nav className={styles.navContainer}>
+            <div className={styles.container}>
+                <nav className={`${styles.navContainer} ${color ? styles['container-bg'] : ''}`}>
                     <ul id="sidemenu">
                         <li><a href="#home" >Home</a></li>
                         <li><a href="#spaces">Spaces</a></li>
