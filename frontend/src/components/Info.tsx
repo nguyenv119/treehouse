@@ -27,7 +27,8 @@ export default function Info() {
 
     return (
         <>
-            <h1 className={styles.title}>Welcome to Info :) </h1>
+        <div id="info">
+        <h1 className={styles.title}>Welcome to Info :) </h1>
             <div className={styles.container}>
 
                 <div className={styles.section}>
@@ -66,6 +67,7 @@ export default function Info() {
                     </p>
                 </div>
             </div>
+        </div>
         </>
     );
 }
