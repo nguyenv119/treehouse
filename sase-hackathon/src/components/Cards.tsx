@@ -1,6 +1,8 @@
 import styles from './Card.module.css';
 
-export default function Card() {
+export default function Cards() {
+
+
 	return (
 		<>
 			<div className={styles.container} id="services">

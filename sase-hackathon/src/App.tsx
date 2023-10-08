@@ -2,41 +2,47 @@
 import './App.css'
 import { useRef, forwardRef } from 'react'
 import { HiArrowSmDown } from 'react-icons/hi'
-import Card from './components/Card'
+import Card from './components/Cards'
 import Header from './components/Header'
 import videoFile from './assests/Swing.mp4';
 
 function App() {
 
 
-	const cards = useRef(null);
-	const NewComponent = forwardRef<HTMLDivElement, Props>((props, ref) => {
-		return <div ref={ref}>{props.children}</div>;
-	});
-
-	const titleRef = useRef<HTMLDivElement>(null);
-	return <NewComponent ref={titleRef}>Some content</NewComponent>;
-
-
-	function handleScrollToCards() {
-		cards.current.scrollIntoView({
-			behavior: 'smooth',
-			block: 'nearest',
-			inline: 'center'
-		});
-	}
+	// const cards = useRef(null);
+	// const Cards = forwardRef(function Cards(props, ref) {
+	// 	return (
+	// 		<label>
+	// 			{props.label}
+	// 			<input ref={ref} />
+	// 		</label>
+	// 	);
+	// });
 
 
-	const scrollToElement = (hash) => {
-		const element = document.querySelector(`h2[data-id='${hash}']`);
+	// const titleRef = useRef<HTMLDivElement>(null);
+	// return <NewComponent ref={titleRef}>Some content</NewComponent>;
 
-		if (element) {
-			const { top } = element.getBoundingClientRect();
-			const { marginTop } = window.getComputedStyle(element);
-			const y = top + window.scrollY - parseInt(marginTop);
-			window.scrollTo({ top: y, behavior: "smooth" });
-		}
-	}
+
+	// function handleScrollToCards() {
+	// 	cards.current.scrollIntoView({
+	// 		behavior: 'smooth',
+	// 		block: 'nearest',
+	// 		inline: 'center'
+	// 	});
+	// }
+
+
+	// const scrollToElement = (hash) => {
+	// 	const element = document.querySelector(`h2[data-id='${hash}']`);
+
+	// 	if (element) {
+	// 		const { top } = element.getBoundingClientRect();
+	// 		const { marginTop } = window.getComputedStyle(element);
+	// 		const y = top + window.scrollY - parseInt(marginTop);
+	// 		window.scrollTo({ top: y, behavior: "smooth" });
+	// 	}
+	// }
 
 
 	return (
@@ -58,7 +64,7 @@ function App() {
 					Your browser does not support the video tag.
 				</video>
 			</div>
-			<Card ref={cards} />
+			{/* <Card ref={cards} /> */}
 		</>
 	)
 }
