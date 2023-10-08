@@ -28,7 +28,7 @@ export default function Info() {
     return (
         <>
         <div id="info">
-        <h1 className={styles.title}>Welcome to Info :) </h1>
+        <h1 className={styles.title}>Learn More:</h1>
             <div className={styles.container}>
 
                 <div className={styles.section}>
