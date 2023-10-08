@@ -26,6 +26,7 @@ form textarea {
     border: 0;
     outline: none;
     background-color: #85a486;
+    opacity: 0.5;
 
     padding: 15px;
     margin: 15px 0;
@@ -46,5 +47,5 @@ form textarea {
 }
 
 .btn2:hover {
-    background-color: #85a486;
+    background-color: #ffbb00;
 }
