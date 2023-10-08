@@ -11,8 +11,8 @@ html{
 }
 
 body{
-	background-color: 	#7a997c;
-	/*background-color: 	#85a486;*/
+	/* background-color: 	#7a997c; */
+	background-color: 	#85a486;
 	
 }
 
@@ -68,8 +68,8 @@ body{
 	width: 50%;
 	height: auto;
 	position: absolute;
-	top: -110px;
-	left: 0%;
+	top: 0px;
+	right: 60px;
 	z-index: -1; /* Place the video behind other content */
 	margin-top: 5%;
   }

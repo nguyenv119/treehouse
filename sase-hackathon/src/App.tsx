@@ -28,30 +28,6 @@ function App() {
 	}
 
 
-	// const titleRef = useRef<HTMLDivElement>(null);
-	// return <NewComponent ref={titleRef}>Some content</NewComponent>;
-
-
-	// function handleScrollToCards() {
-	// 	cards.current.scrollIntoView({
-	// 		behavior: 'smooth',
-	// 		block: 'nearest',
-	// 		inline: 'center'
-	// 	});
-	// }
-
-
-	// const scrollToElement = (hash) => {
-	// 	const element = document.querySelector(`h2[data-id='${hash}']`);
-
-	// 	if (element) {
-	// 		const { top } = element.getBoundingClientRect();
-	// 		const { marginTop } = window.getComputedStyle(element);
-	// 		const y = top + window.scrollY - parseInt(marginTop);
-	// 		window.scrollTo({ top: y, behavior: "smooth" });
-	// 	}
-	// }
-
 
 	return (
 		<>
