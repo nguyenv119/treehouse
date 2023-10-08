@@ -31,8 +31,11 @@ export default function Info() {
 			face when they don't understand course material or assignments. 
 			
 			Our chatbot, powered by OpenAI, will facilitate constructive discussions where students can 
-			openly share their vulnerabilities without judgment. Moderation will prevent 
-			harmful or malicious content. Together, through open communication and compassion, 
+			openly share their vulnerabilities without judgment. 
+			
+			Moderation will prevent harmful or malicious content. 
+			
+			Together, through open communication and compassion, 
 			we will empower students to overcome self-doubt and achieve their academic potential.</p>
         </div>
         <div className={styles.section}>
