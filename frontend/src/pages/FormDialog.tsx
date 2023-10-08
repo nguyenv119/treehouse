@@ -8,7 +8,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
 import styles from './FormDialog.module.css';
-export default function FormDialog() {
+
+interface FormDialogProps {
+	handleSubmit: (event: React.FormEvent<HTMLFormElement>, topic: string, note: string) => void;
+}
+
+export default function FormDialog({ handleSubmit }: FormDialogProps) {
 	const [open, setOpen] = React.useState(false);
 	const [topic, setTopic] = React.useState('');
 	const [note, setNote] = React.useState('');
@@ -21,6 +26,11 @@ export default function FormDialog() {
 	const handleClose = () => {
 		setOpen(false);
 	};
+
+	const handleSubmitForm = (event) => {
+		setOpen(false);
+		handleSubmit(event, topic, note);
+	}
 
 	return (
 		<div className={styles.container}>
@@ -40,6 +50,10 @@ export default function FormDialog() {
 						label="Topic (optional)"
 						fullWidth
 						variant="standard"
+						value={topic}
+						onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+							setTopic(event.target.value);
+						}}
 					/>
 					{/* <DialogContentText>
 
@@ -53,11 +67,15 @@ export default function FormDialog() {
 						id="filled-multiline-static"
 						multiline
 						rows={2}
+						value={note}
+						onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+							setNote(event.target.value);
+						}}
 					/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose}>Cancel</Button>
-					<Button onClick={handleClose}>Post</Button>
+					<Button onClick={handleSubmitForm}>Post</Button>
 				</DialogActions>
 			</Dialog>
 		</div>

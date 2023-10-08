@@ -36,6 +36,7 @@ function App() {
 				<div className="container">
 					<div>
 						<h1 className="logo">
+						{/* SafeSpace */}
 						SafeSpace
 						</h1>
 					</div> 
