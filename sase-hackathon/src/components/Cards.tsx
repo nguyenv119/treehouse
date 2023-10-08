@@ -5,7 +5,7 @@ export default function Cards() {
 	const navigate = useNavigate();
 
 	function handleClick() {
-		navigate('/space/1', { replace: true });
+		navigate('/space/1');
 	}
 
 	return (

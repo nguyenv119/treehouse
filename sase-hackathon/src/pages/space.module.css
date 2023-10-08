@@ -1,0 +1,13 @@
+/* body {
+	background-color: #fff;
+} */
+
+
+.notes{
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+	background-color: #fff;
+	border-radius: 10px;
+	text-align: center;
+}
