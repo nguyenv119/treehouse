@@ -15,6 +15,7 @@ interface FormDialogProps {
 
 export default function FormDialog({ handleSubmit }: FormDialogProps) {
 	const [open, setOpen] = React.useState(false);
+
 	const [topic, setTopic] = React.useState('');
 	const [note, setNote] = React.useState('');
 
@@ -30,6 +31,8 @@ export default function FormDialog({ handleSubmit }: FormDialogProps) {
 	const handleSubmitForm = (event) => {
 		setOpen(false);
 		handleSubmit(event, topic, note);
+		setTopic('');
+		setNote('');
 	}
 
 	return (
