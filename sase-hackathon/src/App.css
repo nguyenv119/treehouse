@@ -11,7 +11,9 @@ html{
 }
 
 body{
-	background-color: 	#85a486;
+	background-color: 	#7a997c;
+	/*background-color: 	#85a486;*/
+	
 }
 
 /* ----------------- Landing Page ----------------- */
@@ -62,11 +64,11 @@ body{
 }
 
 .hero-video {
-	width: 60%;
+	width: 50%;
 	height: auto;
 	position: absolute;
-	top: 0;
-	right: 80px;
+	top: -20px;
+	left: 0%;
 	z-index: -1; /* Place the video behind other content */
   }
 
