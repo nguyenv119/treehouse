@@ -18,7 +18,7 @@
   .section {
 	width: 400px; /* Adjust the width as needed */
 	height: 400px;
-	background-color: #FAF9F6	;
+	background-color: rgb(232, 232, 232)	;
 	box-sizing: border-box;
 	padding: 3%;
 	border-radius: 8px;
