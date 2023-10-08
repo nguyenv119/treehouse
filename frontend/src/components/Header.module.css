@@ -8,7 +8,12 @@
     top: 10px;
     right: 0%;
     position: fixed;
-   
+    
+}
+
+.container-bg {
+    background-color: #ffbb00;
+    opacity: 0.7;
 }
 
 .navContainer {
@@ -32,6 +37,7 @@ nav ul li a {
     font-size: 20px;
     position: relative;
     right: 0px;
+    
 }
 
 nav ul li a::after {
@@ -50,11 +56,6 @@ nav ul li a:hover::after {
 }
 
 
-/* When scrolled, the header's background color changes */
-.scrolled {
-    background-color: #f4f4f4;  /* Adjust this color to your preference */
-}
-
 /* Style for each navigation link */
 nav ul li a {
     /* ... existing styles ... */
@@ -65,17 +66,17 @@ nav ul li a {
 
 /* Color boxes for each navigation link */
 nav ul li:nth-child(1) a {
-    background-color: #ffbb00;  
+    /* background-color: #ffbb00;   */
 }
 
 nav ul li:nth-child(2) a {
-    background-color: #ffbb00;
+    /* background-color: #ffbb00; */
 }
 
 nav ul li:nth-child(3) a {
-    background-color: #ffbb00;
+    /* background-color: #ffbb00; */
 }
 
 nav ul li:nth-child(4) a {
-    background-color: #ffbb00;
+    /* background-color: #ffbb00; */
 }

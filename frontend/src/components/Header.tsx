@@ -2,26 +2,28 @@ import { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 
 export default function Header() {
-    const [scrolled, setScrolled] = useState(false);
+    const [color, setColor] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => {
-            if (window.scrollY > 200) { // Change background after scrolling 200px
-                setScrolled(true);
+        const changeColor = () => {
+            if (window.scrollY >= 950) {
+                setColor(true);
             } else {
-                setScrolled(false);
+                setColor(false);
             }
-        };
+        }
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', changeColor);
+
         return () => {
-            window.removeEventListener('scroll', onScroll);
-        };
+            // Clean up the event listener when the component unmounts
+            window.removeEventListener('scroll', changeColor);
+        }
     }, []);
 
     return (
-        <div className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-            <div className={styles.container}>
+        <div className={styles.header}>
+            <div className={`${styles.container} ${color ? styles['container-bg'] : ''}`}>
                 <nav className={styles.navContainer}>
                     <ul id="sidemenu">
                         <li><a href="#home" >Home</a></li>
