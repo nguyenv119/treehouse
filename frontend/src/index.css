@@ -2,10 +2,22 @@
  */
 }
 
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
 body {
 	background-color: #85a486;
 }
 
 ::-webkit-scrollbar {
 	display: none;
+}
+
+html {
+	font-family: QuickSand, sans-serif;
+	/* Firefox */
+	scrollbar-width: none;
 }
