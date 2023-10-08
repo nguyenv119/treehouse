@@ -9,40 +9,24 @@ import videoFile from './assests/Swing.mp4';
 function App() {
 
 
-	// const cards = useRef(null);
-	// const Cards = forwardRef(function Cards(props, ref) {
-	// 	return (
-	// 		<label>
-	// 			{props.label}
-	// 			<input ref={ref} />
-	// 		</label>
-	// 	);
-	// });
+	const ref = useRef(null);
 
+	const CardsComponent = forwardRef<HTMLDivElement>((props, ref) => {
+		return (
+			<div ref={ref}>
+				<Cards />
+			</div>
+		);
+	});
 
-	// const titleRef = useRef<HTMLDivElement>(null);
-	// return <NewComponent ref={titleRef}>Some content</NewComponent>;
+	function handleClick() {
+		ref.current.scrollIntoView({
+			behavior: 'smooth',
+			block: 'nearest',
+			inline: 'center'
+		});
+	}
 
-
-	// function handleScrollToCards() {
-	// 	cards.current.scrollIntoView({
-	// 		behavior: 'smooth',
-	// 		block: 'nearest',
-	// 		inline: 'center'
-	// 	});
-	// }
-
-
-	// const scrollToElement = (hash) => {
-	// 	const element = document.querySelector(`h2[data-id='${hash}']`);
-
-	// 	if (element) {
-	// 		const { top } = element.getBoundingClientRect();
-	// 		const { marginTop } = window.getComputedStyle(element);
-	// 		const y = top + window.scrollY - parseInt(marginTop);
-	// 		window.scrollTo({ top: y, behavior: "smooth" });
-	// 	}
-	// }
 
 
 	return (
@@ -52,9 +36,8 @@ function App() {
 				<div className="container">
 					<h1 className="logo">UBelong</h1>
 					<p>A space where you feel safe</p>
-
 				</div>
-				<button className="arrowContainer">
+				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a safe space</p>
 					<HiArrowSmDown className="arrow" />
 				</button>
@@ -64,7 +47,7 @@ function App() {
 					Your browser does not support the video tag.
 				</video>
 			</div>
-			<Cards />
+			<CardsComponent ref={ref} />
 		</>
 	)
 }
