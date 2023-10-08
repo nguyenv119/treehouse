@@ -3,6 +3,7 @@ import Card from './components/card'
 import Header from './components/header'
 import './App.css'
 import { HiArrowSmDown } from 'react-icons/hi'
+import videoFile from './assests/Swing.mp4';
 
 function App() {
 
@@ -19,6 +20,11 @@ function App() {
 					<p>Join a safe space</p>
 					<HiArrowSmDown className="arrow" />
 				</button>
+
+				<video className="hero-video" autoPlay loop muted>
+          			<source src={videoFile} type="video/mp4" />
+          			Your browser does not support the video tag.
+        		</video>
 			</div>
 			<Card />
 		</>
