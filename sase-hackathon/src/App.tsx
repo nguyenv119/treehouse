@@ -1,12 +1,31 @@
 
 import './App.css'
-import { useRef } from 'react'
+import { useRef, forwardRef } from 'react'
 import { HiArrowSmDown } from 'react-icons/hi'
 import Card from './components/Card'
 import Header from './components/Header'
 import videoFile from './assests/Swing.mp4';
 
 function App() {
+
+
+	const cards = useRef(null);
+	const NewComponent = forwardRef<HTMLDivElement, Props>((props, ref) => {
+		return <div ref={ref}>{props.children}</div>;
+	});
+
+	const titleRef = useRef<HTMLDivElement>(null);
+	return <NewComponent ref={titleRef}>Some content</NewComponent>;
+
+
+	function handleScrollToCards() {
+		cards.current.scrollIntoView({
+			behavior: 'smooth',
+			block: 'nearest',
+			inline: 'center'
+		});
+	}
+
 
 	const scrollToElement = (hash) => {
 		const element = document.querySelector(`h2[data-id='${hash}']`);
@@ -39,7 +58,7 @@ function App() {
 					Your browser does not support the video tag.
 				</video>
 			</div>
-			<Card />
+			<Card ref={cards} />
 		</>
 	)
 }
