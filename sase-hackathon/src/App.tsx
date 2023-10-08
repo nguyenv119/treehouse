@@ -2,7 +2,7 @@
 import Card from './components/card'
 import Header from './components/header'
 import './App.css'
-
+import { HiArrowSmDown } from 'react-icons/hi'
 
 function App() {
 
@@ -11,11 +11,14 @@ function App() {
 			<Header />
 			<div className="hero">
 				<div className="container">
-					<h1 className="logo">Ubelong</h1>
+					<h1 className="logo">UBelong</h1>
 					<p>A space where you feel safe</p>
-					<p>Join a safe space</p>
-				</div>
 
+				</div>
+				<button className="arrowContainer">
+					<p>Join a safe space</p>
+					<HiArrowSmDown className="arrow" />
+				</button>
 			</div>
 			<Card />
 		</>
