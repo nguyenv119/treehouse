@@ -7,10 +7,7 @@ import Header from './components/Header'
 import videoFile from './assests/Swing.mp4';
 
 function App() {
-
-
 	const ref = useRef(null);
-
 	const CardsComponent = forwardRef<HTMLDivElement>((props, ref) => {
 		return (
 			<div ref={ref}>
@@ -26,8 +23,6 @@ function App() {
 			inline: 'center'
 		});
 	}
-
-
 
 	return (
 		<>
