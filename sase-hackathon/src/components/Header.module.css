@@ -14,8 +14,6 @@
 nav{
     display: flex;
     align-items: center;
-    top: 200px;
-    left: 200px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
