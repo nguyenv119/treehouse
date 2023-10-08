@@ -5,7 +5,7 @@ export default function Header() {
 		<>
 			<div className={styles.header}>
 				<div className={styles.container}>
-					<nav>
+					<nav className={styles.navContainer}>
 						<ul id="sidemenu">
 							<li><a href="#header">Home</a></li>
 							<li><a href="#Info">Info</a></li>
