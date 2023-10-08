@@ -12,7 +12,7 @@
 	font-weight: 500;
 	padding-top: 5%;
 	margin-left: 5%;
-	margin-bottom: -70PX;
+	margin-bottom: -40px;
 }
   
   .section {
@@ -22,4 +22,8 @@
 	box-sizing: border-box;
 	padding: 1%;
 	border-radius: 8px;
+  }
+
+  .indent {
+	padding-left: 2%;
   }
