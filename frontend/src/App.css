@@ -43,11 +43,24 @@ p{
 	color: dark-brown;
 	text-decoration: none;
 	color: inherit;
+	vertical-align:middle;
 }
 .learnMore:hover{
 	cursor: pointer;
 	opacity: 0.7;
 }	
+
+.arrowRight {
+	vertical-align: middle;
+	margin-left: 1%;
+}
+
+.arrowDown {
+	/* vertical-align: middle; */
+	margin-top: -2%;
+	transform: translateX(10px);
+}
+
 .arrowContainer{
 	position: absolute;
 	display: flex;
