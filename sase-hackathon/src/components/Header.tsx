@@ -1,4 +1,6 @@
 import styles from './Header.module.css'
+// import { Link } from 'react-router-dom'
+
 
 export default function Header() {
 	return (
@@ -7,10 +9,11 @@ export default function Header() {
 				<div className={styles.container}>
 					<nav className={styles.navContainer}>
 						<ul id="sidemenu">
-							<li><a href="#header">Home</a></li>
-							<li><a href="#Info">Info</a></li>
-							<li><a href="#QBoard">Question Board</a></li>
-							<li><a href="#contact">Help</a></li>
+							{/* <Link to="#home">Home</Link> */}
+							<li><a href="#home" >Home</a></li>
+							<li><a href="#spaces">Spaces</a></li>
+							<li><a href="#info">Info</a></li>ß
+							{/* <li><a href="#contact">Help</a></li> */}
 						</ul>
 					</nav>
 				</div>

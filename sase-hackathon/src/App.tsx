@@ -4,7 +4,10 @@ import { useRef, forwardRef } from 'react'
 import { HiArrowSmDown } from 'react-icons/hi'
 import Cards from './components/Cards'
 import Header from './components/Header'
-import videoFile from './assests/Swing.mp4';
+import Info from './components/Info'
+import ScrollToHashElement from './components/ScrollToHashElement'
+
+import videoFile from './assets/Swing.mp4';
 
 function App() {
 	const ref = useRef(null);
@@ -26,11 +29,15 @@ function App() {
 
 	return (
 		<>
+			<ScrollToHashElement />
 			<Header />
-			<div className="hero">
+			<div className="hero" id='home'>
 				<div className="container">
-					<h1 className="logo"><span className="custom-color">U</span>Belong</h1>
-					<p>"A space where you feel safe, a space where <span className="custom-color">You Belong</span>"</p>
+					<h1 className="logo">UBelong</h1>
+					<p>A space where you</p>
+					<p>_ feel safe expressing your emotions</p>
+					<p className='last'>_ other people relate to you</p>
+					<a href="#info" className='learnMore'>Learn more....</a>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a safe space</p>
@@ -43,6 +50,8 @@ function App() {
 				</video>
 			</div>
 			<CardsComponent ref={ref} />
+			<Info />
+
 		</>
 	)
 }

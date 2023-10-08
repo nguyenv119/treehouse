@@ -1,12 +1,18 @@
+.container{
+	padding-top: 100px;
+}
+.title{
+	font-size: 40px;
+	font-weight: 500;
+	margin-left: 5%;
+}
 /* services section */
 .serviceList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 40px;
-  margin-top: 80px;
-  padding: 5%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 40px;
+	padding: 5%;
 }
-
 
 .serviceList .box1 {
     background: #e4b976;
@@ -72,4 +78,5 @@
 .serviceList div:hover{
     background: #fff;
     transform: translateY(-10px);
+	cursor: pointer;
 }
