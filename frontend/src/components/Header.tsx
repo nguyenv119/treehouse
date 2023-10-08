@@ -13,7 +13,7 @@ export default function Header() {
 							<li><a href="#home" >Home</a></li>
 							<li><a href="#spaces">Spaces</a></li>
 							<li><a href="#info">Info</a></li>
-							{/* <li><a href="#contact">Help</a></li> */}
+							<li><a href="#help">Help</a></li>
 						</ul>
 					</nav>
 				</div>

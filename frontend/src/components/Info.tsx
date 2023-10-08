@@ -3,7 +3,7 @@ import styles from './Info.module.css';
 export default function Info() {
   return (
     <>
-	<h1 className={styles.title}>Welcome to Info :)</h1>	
+	<h1 id='info' className={styles.title}>Welcome to Info :)</h1>	
       
 	  <div className={styles.container}>
         <div className={styles.section}>
