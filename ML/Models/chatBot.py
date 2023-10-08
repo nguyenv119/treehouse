@@ -34,9 +34,6 @@ while True:
     
     # Get model's message
     assistant_message = response['choices'][0]['message']['content']
-    print("hi")
-    print("hi")
-    print("hi")
     # Append model's message to the messages
     messages.append({"role": "assistant", "content": assistant_message})
     
