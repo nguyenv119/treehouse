@@ -2,7 +2,7 @@
 import './App.css'
 import { useRef, forwardRef } from 'react'
 import { HiArrowSmDown } from 'react-icons/hi'
-import Card from './components/Cards'
+import Cards from './components/Cards'
 import Header from './components/Header'
 import videoFile from './assests/Swing.mp4';
 
@@ -64,7 +64,7 @@ function App() {
 					Your browser does not support the video tag.
 				</video>
 			</div>
-			{/* <Card ref={cards} /> */}
+			<Cards />
 		</>
 	)
 }
