@@ -50,6 +50,18 @@ p{
 	font-size: 23px;
 	color: #ffbb00;
 }	
+
+.arrowRight {
+	vertical-align: middle;
+	margin-left: 1%;
+}
+
+.arrowDown {
+	/* vertical-align: middle; */
+	margin-top: -2%;
+	transform: translateX(10px);
+}
+
 .arrowContainer{
 	position: absolute;
 	display: flex;

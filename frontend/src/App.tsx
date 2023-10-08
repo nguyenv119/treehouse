@@ -1,7 +1,7 @@
 
 import './App.css'
 import { useRef, forwardRef } from 'react'
-import { HiArrowSmDown } from 'react-icons/hi'
+import { HiArrowCircleDown, HiArrowCircleLeft, HiArrowCircleRight, HiArrowSmDown } from 'react-icons/hi'
 import Cards from './components/Cards'
 import Header from './components/Header'
 import Info from './components/Info'
@@ -40,13 +40,16 @@ function App() {
 						</h1>
 					</div> 
 					<p>A space where you</p>
-					<p>- Feel safe expressing your emotions</p>
-					<p className='last'>- Other people relate to you </p>
-					<a href="#info" className='learnMore'>Learn more</a>
+					<p>_ feel safe expressing your emotions</p>
+					<p className='last'>_ other people relate to you</p>
+					<a href="#info" className='learnMore'>
+						Learn More
+						<HiArrowCircleRight className="arrowRight" />
+					</a>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a Safe Space</p>
-					<HiArrowSmDown className="arrow" />
+					<HiArrowCircleDown className="arrowDown" />
 				</button>
 
 				<video className="hero-video" autoPlay loop muted>
