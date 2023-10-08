@@ -43,10 +43,12 @@ p{
 	color: dark-brown;
 	text-decoration: none;
 	color: inherit;
+	transition: transform 0.3s ease;
 }
 .learnMore:hover{
 	cursor: pointer;
-	opacity: 0.7;
+	font-size: 23px;
+	color: #ffbb00;
 }	
 .arrowContainer{
 	position: absolute;

@@ -36,13 +36,13 @@ function App() {
 				<div className="container">
 					<div>
 						<h1 className="logo">
-							SafeSpace
+						<span className="custom-color">Safe</span>Space
 						</h1>
 					</div> 
 					<p>A space where you</p>
-					<p>_ feel safe expressing your emotions</p>
-					<p className='last'>_ other people relate to you</p>
-					<a href="#info" className='learnMore'>Learn more....</a>
+					<p>- Feel safe expressing your emotions</p>
+					<p className='last'>- Other people relate to you </p>
+					<a href="#info" className='learnMore'>Learn more</a>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a Safe Space</p>
