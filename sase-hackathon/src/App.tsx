@@ -29,8 +29,8 @@ function App() {
 			<Header />
 			<div className="hero">
 				<div className="container">
-					<h1 className="logo">UBelong</h1>
-					<p>A space where you feel safe</p>
+					<h1 className="logo"><span className="custom-color">U</span>Belong</h1>
+					<p>"A space where you feel safe, a space where <span className="custom-color">You Belong</span>"</p>
 				</div>
 				<button className="arrowContainer" onClick={handleClick}>
 					<p>Join a safe space</p>

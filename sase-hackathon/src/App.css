@@ -25,11 +25,13 @@ body{
 	position: absolute; /* or 'relative' depending on your layout needs */
     left: 80px;
     top: 350px;
+	font-size: 20px;
 }
 .logo{
 	font-size: 80px;
 	font-weight: 800;
 	color: dark-brown;
+	margin-bottom: 10px;
 }
 
 .arrowContainer{
@@ -53,7 +55,7 @@ body{
     content: '';
     width: 0;
     height: 3px;
-    background: black;
+    background: #ffbb00;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -73,5 +75,9 @@ body{
 	z-index: -1; /* Place the video behind other content */
 	margin-top: 5%;
   }
+
+  .custom-color {
+    color: #ffbb00;
+}
 
 
