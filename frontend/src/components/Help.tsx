@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './Help.module.css';
 
 export default function Help() {
@@ -6,13 +5,12 @@ export default function Help() {
         <div>
             <div id="contact">
                 <div className={styles.container}>
-                <h1 className={styles.title}>Resources</h1>
+                <h1 className={styles.title}>Talk to a Counseler</h1><br></br>
                     <div className={styles.row}>
                         <div className={styles.contactLeft}>
-                            <p>● Email: info@theActionAlliance.org</p>
-                            <p>● Phone: 988</p>
-                            <p>● Websites: https://theactionalliance.org/</p>
-                            
+                            <p>Email: <i>therapist@gmail.com</i></p>
+                            <p>Phone: <i>888-888-8888</i></p>
+                            <p>Websites: <i>https://theactionalliance.org/</i></p>
                         </div>
                         <div className={styles.contactRight}>
                             <form name="submit-to-google-sheet">
