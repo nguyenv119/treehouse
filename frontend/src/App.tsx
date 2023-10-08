@@ -1,10 +1,10 @@
-
 import './App.css'
 import { useRef, forwardRef } from 'react'
 import { HiArrowCircleDown, HiArrowCircleLeft, HiArrowCircleRight, HiArrowSmDown } from 'react-icons/hi'
 import Cards from './components/Cards'
 import Header from './components/Header'
 import Info from './components/Info'
+import Help from './components/Help'
 import ScrollToHashElement from './components/ScrollToHashElement'
 
 
@@ -36,8 +36,7 @@ function App() {
 				<div className="container">
 					<div>
 						<h1 className="logo">
-						{/* SafeSpace */}
-						SafeSpace
+						TreeHouse
 						</h1>
 					</div> 
 					<p>A space where you</p>
@@ -60,6 +59,7 @@ function App() {
 			</div>
 			<CardsComponent ref={ref} />
 			<Info />
+			<Help />
 			
 		</>
 	)

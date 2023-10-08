@@ -1,0 +1,50 @@
+/* contact section */
+.container{
+	padding-top: 5%;
+    background-color: #FAF9F6;
+    padding-left: 5%;
+    font-size: 20px;
+}
+
+.contact-right {
+    flex-basis: 60%;    
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #080808;
+    border-color: #fff;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background-color: #85a486;
+
+    padding: 15px;
+    margin: 15px 0;
+    color: black;
+    font-size: 18px;
+    border-radius: 6px;
+    max-width: 90%;
+}
+
+.btn2 {
+    padding: 10px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.btn2:hover {
+    background-color: #85a486;
+}
