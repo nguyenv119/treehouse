@@ -51,7 +51,7 @@ function App() {
 			</div>
 			<CardsComponent ref={ref} />
 			<Info />
-
+			
 		</>
 	)
 }
