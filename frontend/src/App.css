@@ -44,11 +44,13 @@ p{
 	text-decoration: none;
 	color: inherit;
 	transition: transform 0.3s ease;
+	background-color: #ffbb00;
+	padding: 10px;
+	border-radius: 8px;
 }
 .learnMore:hover{
 	cursor: pointer;
-	font-size: 23px;
-	color: #ffbb00;
+	background-color: #ffd000;
 }	
 
 .arrowRight {

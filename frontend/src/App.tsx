@@ -40,8 +40,8 @@ function App() {
 						</h1>
 					</div> 
 					<p>A space where you</p>
-					<p>_ feel safe expressing your emotions</p>
-					<p className='last'>_ other people relate to you</p>
+					<p>- Feel safe expressing your emotions</p>
+					<p className='last'>- Other people relate to you</p>
 					<a href="#info" className='learnMore'>
 						Learn More
 						<HiArrowCircleRight className="arrowRight" />
