@@ -1,10 +1,11 @@
 import './App.css'
 import { useRef, forwardRef } from 'react'
-import { HiArrowCircleDown, HiArrowCircleLeft, HiArrowCircleRight, HiArrowSmDown } from 'react-icons/hi'
+import { HiArrowCircleDown, HiArrowCircleRight } from 'react-icons/hi'
 import Cards from './components/Cards'
 import Header from './components/Header'
 import Info from './components/Info'
 import Help from './components/Help'
+import Chatbot from './components/Chatbot'
 import ScrollToHashElement from './components/ScrollToHashElement'
 
 
@@ -51,6 +52,7 @@ function App() {
 					<p>Join a Safe Space</p>
 					<HiArrowCircleDown className="arrowDown" />
 				</button>
+				<Chatbot />
 
 				<video className="hero-video" autoPlay loop muted>
 					<source src={videoFile} type="video/mp4" />
