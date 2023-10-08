@@ -3,18 +3,56 @@ import gradio
 
 openai.api_key = "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"
 
-messages = [{"role": "system", "content": "You are a financial experts that specializes in real estate investment and negotiation"}]
+categories = {
+    0: "classes at university", 
+    1: "work on their social life at university", 
+    2: "applying to and finding internships and jobs from university", 
+    3: "possible roomate problems at univeristy", 
+    4: "possible romantic or social relationship issues", 
+    5: "their situation", 
+}
 
-def CustomChatGPT(user_input):
-    messages.append({"role": "user", "content": user_input})
+system_msg = int(input("How would you like me to respond to you? "))
+therapist = "You are an empathetic, understanding, and friendly therapist helping someone with imposter syndrome with " + categories[system_msg]
+messages = [{"role": "system", "content": therapist}]
+print("Your new assistant is ready!")
+
+while True:
+    user_message = input("You: ")
+    if user_message.lower() == 'quit()':
+        break
+    
+    # Append user message to the messages
+    messages.append({"role": "user", "content": user_message})
+    
+    # Query the model
     response = openai.ChatCompletion.create(
-        model = "gpt-3.5-turbo",
-        messages = messages
+        model="gpt-3.5-turbo",
+        messages=messages,
+        max_tokens=100,
+        temperature=0.8
     )
-    ChatGPT_reply = response["choices"][0]["message"]["content"]
-    messages.append({"role": "assistant", "content": ChatGPT_reply})
-    return ChatGPT_reply
+    
+    # Get model's message
+    assistant_message = response['choices'][0]['message']['content']
+    print("hi")
+    print("hi")
+    print("hi")
+    # Append model's message to the messages
+    messages.append({"role": "assistant", "content": assistant_message})
+    
+    print("Assistant: " + assistant_message)
 
-demo = gradio.Interface(fn=CustomChatGPT, inputs = "text", outputs = "text", title = "Real Estate Pro")
 
-demo.launch(share=True)
+# def CustomChatGPT(user_input):
+#     messages.append({"role": "user", "content": user_input})
+#     response = openai.ChatCompletion.create(
+#         model = "gpt-3.5-turbo",
+#         messages = messages
+#     )
+#     ChatGPT_reply = response["choices"][0]["message"]["content"]
+#     messages.append({"role": "assistant", "content": ChatGPT_reply})
+#     return ChatGPT_reply
+
+# demo = gradio.Interface(fn=CustomChatGPT, inputs = "text", outputs = "text", title = "Real Estate Pro")
+# demo.launch(share=True)
