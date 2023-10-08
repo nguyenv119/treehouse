@@ -2,6 +2,9 @@ import styles from './space.module.css';
 import Draggable from 'react-draggable';
 import FormDialog from './FormDialog';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 
 export default function Space() {
@@ -12,7 +15,7 @@ export default function Space() {
 			const response = await axios.post('https://api.openai.com/v1/chat/completions', {
 				model: "gpt-3.5-turbo",
 				messages: [
-					{"role": "user", "content": `Is the following content bullying or mean? Account for passive aggressiveness and sarcasm, and any type of mean content. Answer yes or no: "${content}"`}
+					{"role": "user", "content": `Is the following content bullying or mean? Account for passive aggressiveness & sarcasm, & any type of mean content. Answer with only either 'yes' or 'no', in lower case - no full stops: "${content}"`}
 				]
 			}, {
 				headers: {
@@ -22,12 +25,12 @@ export default function Space() {
 			});
 		
 			/** Process the response to get the answer */
-			const answer = response.data.choices[0];
-			console.log(answer, content)
+			const answer = response.data.choices[0].message.content.trim().toLowerCase();
+			console.log(answer)
 			return answer === "yes";
 		} catch (error) {
 			console.error('Error calling the API:', error.response ? error.response.data : error);
-			return false;  // Default to not bullying if there's an error
+			return false;  
 		}
 	}
 
@@ -61,10 +64,10 @@ export default function Space() {
 		event.preventDefault();
 	  
 		const bullyingDetected = await isMean(note);
-		console.log(bullyingDetected)
+		console.log("Bullying is " + bullyingDetected)
 	  
 		if (bullyingDetected) {
-		  alert('The content you entered is considered bullying or mean. Please refrain from such content.');
+		  toast.error('The content you entered is considered bullying or mean. Please refrain from such content.');
 		} else {
 		  setNotes([...notes, {
 			topic: topic,
@@ -78,6 +81,7 @@ export default function Space() {
 		<>
 			<div>
 				<h1>Space</h1>
+				<ToastContainer />
 				{
 					notes.map((card) => (
 						<Draggable key={card.id}>
