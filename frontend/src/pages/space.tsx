@@ -62,7 +62,7 @@ export default function Space() {
 
 		const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
 		const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
-
+		console.log(randomX, randomY)
 		setPosition({ x: randomX, y: randomY });
 	}, []);
 
