@@ -2,7 +2,6 @@ import styles from './space.module.css';
 import Draggable from 'react-draggable';
 import FormDialog from './FormDialog';
 // import CardDialog from './CardDialog';
-
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -178,8 +177,7 @@ export default function Space() {
 										</div>
 									</div>
 								</div> :
-
-
+								
 								<Draggable
 									onDrag={handleStart}
 									onStop={handleStop}
