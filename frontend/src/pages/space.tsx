@@ -182,6 +182,7 @@ export default function Space() {
 												onChange={e => setComments(e.target.value)}
 												onClick={(event) => event.stopPropagation()}
 											/>
+											<button type="submit" onClick={ }>Submit</button>
 										</div>
 									</div>
 								</div>
