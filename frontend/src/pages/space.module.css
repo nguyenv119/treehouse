@@ -100,6 +100,24 @@ nav {
 	align-items: center;
 }
 
+.textarea {
+	/* Your textarea styles */
+	width: 400px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	resize: vertical; /* Allow vertical resizing of the textarea */
+  }
+
+  .note {
+	padding-top: 100px;
+	font-size: 40px;
+	color: black;
+	
+	
+  }
+
 /******** Sidebar ********/
 .line {
 	width: 35px;
@@ -215,3 +233,4 @@ nav {
 .link:hover {
 	cursor: pointer;
 }
+

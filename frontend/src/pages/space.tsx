@@ -148,17 +148,23 @@ export default function Space() {
 						// <CardDialog key={card.id} card={card} handleSubmit={handleSubmit} />
 						<div key={card.id} >
 							{open ?
+								
 								<div className={styles.popup} onClick={handleClose}>
 									<div className={styles.popupContainer}>
 										<p className={styles.note}>{card.note}</p>
 										<div>
-											textarea
+											<p>Reply</p>
+											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Your Reply"></textarea>
+											<p>Comments</p>
+      										<textarea className={styles.textarea} name="Message" rows="6" placeholder="Comments"></textarea>
 										</div>
 									</div>
-									<div>
-										comments
-									</div>
+									
+										
+									
 								</div> :
+								
+								
 								<Draggable
 									onDrag={handleStart}
 									onStop={handleStop}
