@@ -1,0 +1,40 @@
+/******** Notes ********/
+.notes {
+	margin: 0 auto;
+	width: auto;
+	width: 400px;
+
+	height: 100px;
+	background-color: #27392f;
+	color: rgb(208, 222, 186);
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0px 0px 73px -23px rgba(0, 0, 0, 0.38);
+
+	cursor: move;
+	/* fallback if grab cursor is unsupported */
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+
+}
+
+.notes:active {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.notes:hover {}
+
+.topic {
+	Font-size: 20px;
+	font-weight: 600;
+	text-align: left;
+	padding: 20px 0 0 10px;
+	width: auto;
+}
+
+.note {}
+
+

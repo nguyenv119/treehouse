@@ -1,6 +1,8 @@
 import styles from './space.module.css';
 import Draggable from 'react-draggable';
 import FormDialog from './FormDialog';
+// import CardDialog from './CardDialog';
+
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -85,27 +87,6 @@ export default function Space() {
 	const [notes, setNotes] = useState<Array<Note>>([]);
 	const { id } = useParams();
 
-
-
-
-	// const cards = [
-	// 	{
-	// 		topic: 'hello',
-	// 		note: 'world',
-	// 		id: crypto.randomUUID()
-	// 	},
-	// 	{
-	// 		topic: 'hello',
-	// 		note: 'world',
-	// 		id: crypto.randomUUID()
-	// 	},
-	// 	{
-	// 		topic: 'hello',
-	// 		note: 'world',
-	// 		id: crypto.randomUUID()
-	// 	}
-	// ];
-
 	async function handleSubmit(event: React.FormEvent<HTMLFormElement>, topic: string, note: string) {
 		event.preventDefault();
 
@@ -123,23 +104,77 @@ export default function Space() {
 		}
 	}
 
+	const [open, setOpen] = useState(false)
+	const [dragging, setDragging] = useState(false)
+
+	const handleStart = () => {
+		setDragging(true);
+	};
+
+	const handleStop = () => {
+		setTimeout(function () { setDragging(false) }, 500);
+		if (!dragging) {
+			setOpen(!open);
+		}
+	};
+
+	const handleClickOpen = () => {
+		if (!dragging) {
+			setOpen(true);
+		}
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	}
+
+
+	const getRandomPosition = (max) => {
+		return Math.floor(Math.random() * max);
+	};
+
+	const randomX = getRandomPosition(window.innerWidth - 400); // 100 is the width of the draggable element
+	const randomY = getRandomPosition(window.innerHeight - 100); // 100 is the height of the draggable element
+
+
 	return (
 		<>
+
 			<NavBar id={id} />
 			<div>
 				<ToastContainer />
 				{
 					notes.map((card) => (
-						<Draggable key={card.id}>
-							<div className={styles.notes}>
-								<p className={styles.topic}>{card.topic}</p>
-								<p className={styles.note}>{card.note}</p>
-							</div>
-						</Draggable >
+						// <CardDialog key={card.id} card={card} handleSubmit={handleSubmit} />
+						<div key={card.id} >
+							{open ?
+								<div className={styles.popup} onClick={handleClose}>
+									<div className={styles.popupContainer}>
+										<p className={styles.note}>{card.note}</p>
+										<div>
+											textarea
+										</div>
+									</div>
+									<div>
+										comments
+									</div>
+								</div> :
+								<Draggable
+									onDrag={handleStart}
+									onStop={handleStop}
+									defaultPosition={{ x: randomX, y: randomY }}>
+									<div className={styles.notes} onClick={handleClickOpen}>
+										<p className={styles.topic}>{card.topic}</p>
+									</div>
+								</Draggable >
+							}
+
+						</div>
 					))
 				}
 			</div >
 			<FormDialog handleSubmit={handleSubmit} />
+
 		</>
 	)
 }
