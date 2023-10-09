@@ -147,7 +147,7 @@ export default function Space() {
 	const handleClose = (event) => {
 		setOpen(false);
 		event.preventDefault();
-	}
+	};
 
 	return (
 		<>
@@ -182,7 +182,7 @@ export default function Space() {
 												onChange={e => setComments(e.target.value)}
 												onClick={(event) => event.stopPropagation()}
 											/>
-											<button type="submit" onClick={ }>Submit</button>
+											<button type="submit" >Submit</button>
 										</div>
 									</div>
 								</div>
