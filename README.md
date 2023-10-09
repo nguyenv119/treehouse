@@ -37,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
-Remember, you are not alone. At UBelong, we stand together. 🤝🏼🌍🎓
+Remember, you are not alone. At TreeHouse, we stand together. 🤝🏼🌍🎓
