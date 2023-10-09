@@ -52,13 +52,13 @@ function App() {
 					<p>Join a TreeHouse</p>
 					<HiArrowCircleDown className="arrowDown" />
 				</button>
-				<Chatbot />
 
 				<video className="hero-video" autoPlay loop muted>
 					<source src={videoFile} type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 			</div>
+			<Chatbot />
 			<CardsComponent ref={ref} />
 			<Info />
 			<Help />
