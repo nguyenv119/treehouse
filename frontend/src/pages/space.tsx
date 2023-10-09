@@ -61,7 +61,7 @@ export default function Space() {
 
 		const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
 		const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
-		console.log(randomX, randomY)
+		// console.log(randomX, randomY)
 		setPosition({ x: randomX, y: randomY });
 	}, []);
 
@@ -82,7 +82,7 @@ export default function Space() {
 
 			/** Process the response to get the answer */
 			const answer = response.data.choices[0].message.content.trim().toLowerCase();
-			console.log(answer)
+			// console.log(answer)
 			return answer === "yes";
 		} catch (error) {
 			console.error('Error calling the API:', error.response ? error.response.data : error);
@@ -144,10 +144,23 @@ export default function Space() {
 		}
 	};
 
-	const handleClose = (event) => {
-		setOpen(false);
+	const handleClose = async (event) => {
 		event.preventDefault();
+	
+		const replyBullyingDetected = await isMean(reply);
+		const commentsBullyingDetected = await isMean(comments);
+
+		console.log(replyBullyingDetected, commentsBullyingDetected);
+	
+		if (replyBullyingDetected || commentsBullyingDetected) {
+			toast.error('The content you entered in the reply or comments is considered bullying or mean. Please refrain from such content.');
+		} else {
+			setOpen(false);
+			setReply('');
+			setComments('');
+		}
 	};
+	
 
 	return (
 		<>
@@ -157,7 +170,8 @@ export default function Space() {
 				{
 					notes.map((card) => (
 						<div key={card.id} >
-							{open ? (
+							{
+							open ? (
 								<div className={styles.popup} onClick={handleClose}>
 									<div className={styles.popupContainer}>
 										<p className={styles.note}>{card.note}</p>
@@ -182,7 +196,8 @@ export default function Space() {
 												onChange={e => setComments(e.target.value)}
 												onClick={(event) => event.stopPropagation()}
 											/>
-											<button type="submit" >Submit</button>
+											{/* Modify this button: */}
+											<button onClick={() => handleSubmit(event, card.topic, card.note)} className={styles.niceButton}>Submit</button>
 										</div>
 									</div>
 								</div>
@@ -192,7 +207,8 @@ export default function Space() {
 										<p className={styles.topic}>{card.topic}</p>
 									</div>
 								</Draggable>
-							)}
+							)
+						}
 						</div>
 					))
 				}
