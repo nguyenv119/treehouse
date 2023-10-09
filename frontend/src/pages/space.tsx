@@ -99,30 +99,30 @@ export default function Space() {
 	const [notes, setNotes] = useState<Array<Note>>([]);
 	const { id } = useParams();
 
-    const [reply, setReply] = useState('');
-    const [comments, setComments] = useState('');
+	const [reply, setReply] = useState('');
+	const [comments, setComments] = useState('');
 
-    async function handleSubmit(event: React.FormEvent<HTMLFormElement>, topic: string, note: string) {
-        event.preventDefault();
+	async function handleSubmit(event: React.FormEvent<HTMLFormElement>, topic: string, note: string) {
+		event.preventDefault();
 
-        const noteBullyingDetected = await isMean(note);
-        const replyBullyingDetected = await isMean(reply);
-        const commentsBullyingDetected = await isMean(comments);
+		const noteBullyingDetected = await isMean(note);
+		const replyBullyingDetected = await isMean(reply);
+		const commentsBullyingDetected = await isMean(comments);
 
-        if (noteBullyingDetected || replyBullyingDetected || commentsBullyingDetected) {
-            toast.error('The content you entered is considered bullying or mean. Please refrain from such content.');
-        } else {
-            setNotes([...notes, {
-                topic: topic,
-                note: note,
-                reply: reply,  
-                comments: comments,  
-                id: crypto.randomUUID()
-            }]);
-            setReply('');
-            setComments('');
-        }
-    }
+		if (noteBullyingDetected || replyBullyingDetected || commentsBullyingDetected) {
+			toast.error('The content you entered is considered bullying or mean. Please refrain from such content.');
+		} else {
+			setNotes([...notes, {
+				topic: topic,
+				note: note,
+				reply: reply,
+				comments: comments,
+				id: crypto.randomUUID()
+			}]);
+			setReply('');
+			setComments('');
+		}
+	}
 
 	const [open, setOpen] = useState(false)
 	const [dragging, setDragging] = useState(false)
@@ -144,58 +144,59 @@ export default function Space() {
 		}
 	};
 
-	const handleClose = () => {
+	const handleClose = (event) => {
 		setOpen(false);
+		event.preventDefault();
 	}
 
-    return (
-        <>
-            <NavBar id={id} />
-            <div>
-                <ToastContainer />
-                {
-                    notes.map((card) => (
-                        <div key={card.id} >
-                            {open ? (
-                                <div className={styles.popup} onClick={handleClose}>
-                                    <div className={styles.popupContainer}>
-                                        <p className={styles.note}>{card.note}</p>
-                                        <div>
-                                            <p>Reply</p>
-                                            <textarea 
-                                                className={styles.textarea} 
-                                                name="Reply" 
-                                                rows="6" 
-                                                placeholder="Your Reply"
-                                                value={reply} 
-                                                onChange={e => setReply(e.target.value)}
+	return (
+		<>
+			<NavBar id={id} />
+			<div>
+				<ToastContainer />
+				{
+					notes.map((card) => (
+						<div key={card.id} >
+							{open ? (
+								<div className={styles.popup} onClick={handleClose}>
+									<div className={styles.popupContainer}>
+										<p className={styles.note}>{card.note}</p>
+										<div>
+											<p>Reply</p>
+											<textarea
+												className={styles.textarea}
+												name="Reply"
+												rows="6"
+												placeholder="Your Reply"
+												value={reply}
+												onChange={e => setReply(e.target.value)}
 												onClick={(event) => event.stopPropagation()}
-                                            />
-                                            <p>Comments</p>
-                                            <textarea 
-                                                className={styles.textarea} 
-                                                name="Comments" 
-                                                rows="6" 
-                                                placeholder="Comments"
-                                                value={comments} 
-                                                onChange={e => setComments(e.target.value)}
+											/>
+											<p>Comments</p>
+											<textarea
+												className={styles.textarea}
+												name="Comments"
+												rows="6"
+												placeholder="Comments"
+												value={comments}
+												onChange={e => setComments(e.target.value)}
 												onClick={(event) => event.stopPropagation()}
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            ) : (
-                                <Draggable onDrag={handleStart} onStop={handleStop} defaultPosition={position}>
-                                    <div className={styles.notes} onClick={handleClickOpen}>
-                                        <p className={styles.topic}>{card.topic}</p>
-                                    </div>
-                                </Draggable>
-                            )}
-                        </div>
-                    ))
-                }
-            </div>
-            <FormDialog handleSubmit={handleSubmit} />
-        </>
-    );
+											/>
+										</div>
+									</div>
+								</div>
+							) : (
+								<Draggable onDrag={handleStart} onStop={handleStop} defaultPosition={position}>
+									<div className={styles.notes} onClick={handleClickOpen}>
+										<p className={styles.topic}>{card.topic}</p>
+									</div>
+								</Draggable>
+							)}
+						</div>
+					))
+				}
+			</div>
+			<FormDialog handleSubmit={handleSubmit} />
+		</>
+	);
 }
