@@ -7,7 +7,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 
@@ -52,6 +52,20 @@ function NavBar({ id }) {
 }
 
 export default function Space() {
+
+	const [position, setPosition] = useState({ x: 0, y: 0 });
+
+	useEffect(() => {
+		const getRandomPosition = (max) => {
+			return Math.floor(Math.random() * max);
+		};
+
+		const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
+		const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
+
+		setPosition({ x: randomX, y: randomY });
+	}, []);
+
 
 	/** Determines if a message is mean or not */
 	async function isMean(content: string) {
@@ -129,13 +143,6 @@ export default function Space() {
 	}
 
 
-	const getRandomPosition = (max) => {
-		return Math.floor(Math.random() * max);
-	};
-
-	const randomX = getRandomPosition(window.innerWidth - 400); // 100 is the width of the draggable element
-	const randomY = getRandomPosition(window.innerHeight - 100); // 100 is the height of the draggable element
-
 
 	return (
 		<>
@@ -168,7 +175,7 @@ export default function Space() {
 								<Draggable
 									onDrag={handleStart}
 									onStop={handleStop}
-									defaultPosition={{ x: randomX, y: randomY }}>
+									defaultPosition={position}>
 									<div className={styles.notes} onClick={handleClickOpen}>
 										<p className={styles.topic}>{card.topic}</p>
 									</div>
