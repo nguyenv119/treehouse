@@ -23,6 +23,23 @@ nav {
 	margin-left: -5px;
 }
 
+
+
+
+.linkHome {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	padding: 2px;
+	opacity: 0.5;
+	margin-left: -5px;
+	margin-top: 20px;
+}
+
+.linkHome:hover {
+	opacity: 1;
+}
+
 .link:hover {
 	opacity: 1;
 }
@@ -107,16 +124,17 @@ nav {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	margin-bottom: 10px;
-	resize: vertical; /* Allow vertical resizing of the textarea */
-  }
+	resize: vertical;
+	/* Allow vertical resizing of the textarea */
+}
 
-  .note {
+.note {
 	padding-top: 100px;
 	font-size: 40px;
 	color: black;
-	
-	
-  }
+
+
+}
 
 /******** Sidebar ********/
 .line {
@@ -185,7 +203,7 @@ nav {
 	background-color: rgba(60, 56, 56, 0.3);
 	opacity: 0.8;
 	width: 300px;
-	height: 40vh;
+	height: 50vh;
 	border-bottom-right-radius: 10px;
 	padding-top: 20px;
 	display: flex;
@@ -201,7 +219,7 @@ nav {
 	background-color: rgba(60, 56, 56, 0.3);
 	opacity: 0.8;
 	width: 300px;
-	height: 40vh;
+	height: 50vh;
 	border-bottom-right-radius: 10px;
 	padding-top: 20px;
 	display: flex;
@@ -233,4 +251,3 @@ nav {
 .link:hover {
 	cursor: pointer;
 }
-

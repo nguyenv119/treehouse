@@ -36,12 +36,12 @@ function NavBar({ id }) {
 				<nav>
 					<ul className={styles.navbarPage}>
 						{id != 'CLASSES' ? <Link to='/space/classes' className={styles.link}>Classes</Link> : null}
-						{id != 'ROOMMATES' ? <Link to='/space/dormlife' className={styles.link}>Dorm Life</Link> : null}
+						{id != 'DORMLIFE' ? <Link to='/space/dormlife' className={styles.link}>Dorm Life</Link> : null}
 						{id != 'FAMILY' ? <Link to='/space/family' className={styles.link}>Family</Link> : null}
 						{id != 'SOCIAL' ? <Link to='/space/social' className={styles.link}>Social</Link> : null}
 						{id != 'JOBS' ? <Link to='/space/jobs' className={styles.link}>Jobs</Link> : null}
 						{id != 'OTHER' ? <Link to='/space/other' className={styles.link}>Other</Link> : null}
-
+						<Link to='/' className={styles.linkHome}>Home</Link>
 					</ul>
 
 				</nav>
