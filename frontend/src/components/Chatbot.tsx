@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import styles from './Chatbot.module.css';
+import { FaGraduationCap } from 'react-icons/fa';
+import { BsPersonFill } from 'react-icons/bs';
+
 
 export default function Chatbot() {
     const [messages, setMessages] = useState([{role: "assistant", content: "How would you like me to respond?"}]);
@@ -103,15 +106,25 @@ export default function Chatbot() {
             </div>
 
             <div className={styles.chatMessages}>
-                {messages.map((msg, idx) => (
+              {messages.map((msg, idx) => (
                 <div key={idx} className={`${styles.message} ${styles[msg.role]}`}>
-                    {msg.role === 'user' ? (
-                    <><img src="/assets/koala.png" alt="User" /><span>{msg.content}</span></>
-                    ) : (
-                    <><img src="/assets/squirrel.png" alt="Bot" /><span>{msg.content}</span></>
-                    )}
+                  {msg.role === 'user' ? (
+                    <>
+                      <h2>
+                        <BsPersonFill className="custom-icon" />
+                      </h2>
+                      <span>{msg.content}</span>
+                    </>
+                  ) : (
+                    <>
+                      <h2>
+                        <FaGraduationCap className="custom-icon" />
+                      </h2>
+                      <span>{msg.content}</span>
+                    </>
+                  )}
                 </div>
-                ))}
+              ))}
             </div>
 
 
