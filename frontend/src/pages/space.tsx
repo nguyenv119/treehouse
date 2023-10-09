@@ -111,22 +111,30 @@ export default function Space() {
 	const [notes, setNotes] = useState<Array<Note>>([]);
 	const { id } = useParams();
 
-	async function handleSubmit(event: React.FormEvent<HTMLFormElement>, topic: string, note: string) {
-		event.preventDefault();
+    const [reply, setReply] = useState('');
+    const [comments, setComments] = useState('');
 
-		const bullyingDetected = await isMean(note);
-		console.log("Bullying is " + bullyingDetected)
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>, topic: string, note: string) {
+        event.preventDefault();
 
-		if (bullyingDetected) {
-			toast.error('The content you entered is considered bullying or mean. Please refrain from such content.');
-		} else {
-			setNotes([...notes, {
-				topic: topic,
-				note: note,
-				id: crypto.randomUUID()
-			}]);
-		}
-	}
+        const noteBullyingDetected = await isMean(note);
+        const replyBullyingDetected = await isMean(reply);
+        const commentsBullyingDetected = await isMean(comments);
+
+        if (noteBullyingDetected || replyBullyingDetected || commentsBullyingDetected) {
+            toast.error('The content you entered is considered bullying or mean. Please refrain from such content.');
+        } else {
+            setNotes([...notes, {
+                topic: topic,
+                note: note,
+                reply: reply,  
+                comments: comments,  
+                id: crypto.randomUUID()
+            }]);
+            setReply('');
+            setComments('');
+        }
+    }
 
 	const [open, setOpen] = useState(false)
 	const [dragging, setDragging] = useState(false)
@@ -152,48 +160,54 @@ export default function Space() {
 		setOpen(false);
 	}
 
-
-
-	return (
-		<>
-
-			<NavBar id={id} />
-			<div>
-				<ToastContainer />
-				{
-					notes.map((card) => (
-						// <CardDialog key={card.id} card={card} handleSubmit={handleSubmit} />
-						<div key={card.id} >
-
-							{open ?
-								<div className={styles.popup} onClick={handleClose}>
-									<div className={styles.popupContainer}>
-										<p className={styles.note}>{card.note}</p>
-										<div>
-											<p>Reply</p>
-											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Your Reply" onClick={(event) => event.stopPropagation()}></textarea>
-											<p>Comments</p>
-											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Comments" onClick={(event) => event.stopPropagation()}></textarea>
-										</div>
-									</div>
-								</div> :
-								
-								<Draggable
-									onDrag={handleStart}
-									onStop={handleStop}
-									defaultPosition={position}>
-									<div className={styles.notes} onClick={handleClickOpen}>
-										<p className={styles.topic}>{card.topic}</p>
-									</div>
-								</Draggable >
-							}
-
-						</div>
-					))
-				}
-			</div >
-			<FormDialog handleSubmit={handleSubmit} />
-
-		</>
-	)
+    return (
+        <>
+            <NavBar id={id} />
+            <div>
+                <ToastContainer />
+                {
+                    notes.map((card) => (
+                        <div key={card.id} >
+                            {open ? (
+                                <div className={styles.popup} onClick={handleClose}>
+                                    <div className={styles.popupContainer}>
+                                        <p className={styles.note}>{card.note}</p>
+                                        <div>
+                                            <p>Reply</p>
+                                            <textarea 
+                                                className={styles.textarea} 
+                                                name="Reply" 
+                                                rows="6" 
+                                                placeholder="Your Reply"
+                                                value={reply} 
+                                                onChange={e => setReply(e.target.value)}
+												onClick={(event) => event.stopPropagation()}
+                                            />
+                                            <p>Comments</p>
+                                            <textarea 
+                                                className={styles.textarea} 
+                                                name="Comments" 
+                                                rows="6" 
+                                                placeholder="Comments"
+                                                value={comments} 
+                                                onChange={e => setComments(e.target.value)}
+												onClick={(event) => event.stopPropagation()}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <Draggable onDrag={handleStart} onStop={handleStop} defaultPosition={position}>
+                                    <div className={styles.notes} onClick={handleClickOpen}>
+                                        <p className={styles.topic}>{card.topic}</p>
+                                    </div>
+                                </Draggable>
+                            )}
+                        </div>
+                    ))
+                }
+            </div>
+            <FormDialog handleSubmit={handleSubmit} />
+        </>
+    );
 }
