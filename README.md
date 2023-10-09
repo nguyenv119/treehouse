@@ -1,6 +1,6 @@
-# UBelong
+# TreeHouse
 
-UBelong is an online sanctuary for students seeking solace from the isolating feelings of imposter syndrome. We've created a digital space where students can anonymously share and engage with one another's experiences across a variety of categories. From academic concerns to social anxieties, UBelong seeks to remind every student that they are not alone in their struggles and that their feelings are valid.
+TreeHouse is an online sanctuary for students seeking solace from the isolating feelings of imposter syndrome. We've created a digital space where students can anonymously share and engage with one another's experiences across a variety of categories. From academic concerns to social anxieties, UBelong seeks to remind every student that they are not alone in their struggles and that their feelings are valid.
 
 ## Features
 
@@ -18,14 +18,14 @@ UBelong is an online sanctuary for students seeking solace from the isolating fe
 
 ## Proof of Concept
 
-Given the limited timeframe, UBelong currently functions as a proof of concept. As such, user data and interactions are hardcoded examples. Our vision for the full-fledged version includes:
+Given the limited timeframe, TreeHouse currently functions as a proof of concept. As such, user data and interactions are hardcoded examples. Our vision for the full-fledged version includes:
 
 - **Relational Database**: Integration with PostgreSQL or a similar platform to store user-specific information, preferences, and chatbot interactions.
 - **Personalized Chatbot Responses**: Recognizing the diverse mental and emotional states of our users, we aim to offer chatbot communication styles tailored to individual needs, ranging from humorous and light-hearted to sincere and comforting.
 
 ## Contribution
 
-We welcome and appreciate all contributions. If you have ideas or would like to help improve UBelong, please follow our [Contribution Guidelines](LINK_TO_CONTRIBUTION_GUIDELINES).
+We welcome and appreciate all contributions. If you have ideas or would like to help improve TreeHouse, please follow our [Contribution Guidelines](LINK_TO_CONTRIBUTION_GUIDELINES).
 
 ## Acknowledgements
 
