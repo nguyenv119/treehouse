@@ -52,30 +52,18 @@ function NavBar({ id }) {
 
 export default function Space() {
 
-	// const [position, setPosition] = useState({ x: 0, y: 0 });
+	const [position, setPosition] = useState({ x: 0, y: 0 });
 
-	// useEffect(() => {
-	// 	const getRandomPosition = (max) => {
-	// 		return Math.floor(Math.random() * max);
-	// 	};
-
-	// 	const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
-	// 	const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
-	// 	console.log(randomX, randomY)
-	// 	setPosition({ x: randomX, y: randomY });
-	// }, []);
-
-
-	const position = () => {
+	useEffect(() => {
 		const getRandomPosition = (max) => {
 			return Math.floor(Math.random() * max);
 		};
 
 		const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
 		const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
-
-		return { x: randomX, y: randomY };
-	};
+		console.log(randomX, randomY)
+		setPosition({ x: randomX, y: randomY });
+	}, []);
 
 	/** Determines if a message is mean or not */
 	async function isMean(content: string) {

@@ -45,7 +45,7 @@ export default function Chatbot() {
                     {role: "user", content: userMessage},
                     {role: "assistant", content: `You'd like me to respond in a ${userMessage} manner. What are you struggling with?`}
                 ],
-                max_tokens: 200,
+                max_tokens: 100,
                 temperature: 0.8
             };
         } else if (messages.length === 3) {
@@ -59,7 +59,7 @@ export default function Chatbot() {
                 messages: [
                     ...messages, {role: "user", content: userMessage}
                 ],
-                max_tokens: 200,
+                max_tokens: 100,
                 temperature: 0.8
             };
         }
