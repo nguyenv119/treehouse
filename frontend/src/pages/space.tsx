@@ -53,19 +53,30 @@ function NavBar({ id }) {
 
 export default function Space() {
 
-	const [position, setPosition] = useState({ x: 0, y: 0 });
+	// const [position, setPosition] = useState({ x: 0, y: 0 });
 
-	useEffect(() => {
+	// useEffect(() => {
+	// 	const getRandomPosition = (max) => {
+	// 		return Math.floor(Math.random() * max);
+	// 	};
+
+	// 	const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
+	// 	const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
+	// 	console.log(randomX, randomY)
+	// 	setPosition({ x: randomX, y: randomY });
+	// }, []);
+
+
+	const position = () => {
 		const getRandomPosition = (max) => {
 			return Math.floor(Math.random() * max);
 		};
 
 		const randomX = getRandomPosition(window.innerWidth - 400); // Adjust width
 		const randomY = getRandomPosition(window.innerHeight - 100); // Adjust height
-		console.log(randomX, randomY)
-		setPosition({ x: randomX, y: randomY });
-	}, []);
 
+		return { x: randomX, y: randomY };
+	};
 
 	/** Determines if a message is mean or not */
 	async function isMean(content: string) {
@@ -154,24 +165,21 @@ export default function Space() {
 					notes.map((card) => (
 						// <CardDialog key={card.id} card={card} handleSubmit={handleSubmit} />
 						<div key={card.id} >
+
 							{open ?
-								
 								<div className={styles.popup} onClick={handleClose}>
 									<div className={styles.popupContainer}>
 										<p className={styles.note}>{card.note}</p>
 										<div>
 											<p>Reply</p>
-											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Your Reply"></textarea>
+											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Your Reply" onClick={(event) => event.stopPropagation()}></textarea>
 											<p>Comments</p>
-      										<textarea className={styles.textarea} name="Message" rows="6" placeholder="Comments"></textarea>
+											<textarea className={styles.textarea} name="Message" rows="6" placeholder="Comments" onClick={(event) => event.stopPropagation()}></textarea>
 										</div>
 									</div>
-									
-										
-									
 								</div> :
-								
-								
+
+
 								<Draggable
 									onDrag={handleStart}
 									onStop={handleStop}
