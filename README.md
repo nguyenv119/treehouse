@@ -1,6 +1,6 @@
 # TreeHouse
 
-TreeHouse is an online sanctuary for students seeking solace from the isolating feelings of imposter syndrome. We've created a digital space where students can anonymously share and engage with one another's experiences across a variety of categories. From academic concerns to social anxieties, UBelong seeks to remind every student that they are not alone in their struggles and that their feelings are valid.
+TreeHouse is an online sanctuary for students seeking solace from the isolating feelings of imposter syndrome. We've created a digital space where students can anonymously share and engage with one another's experiences across a variety of categories. From academic concerns to social anxieties, TreeHouse seeks to remind every student that they are not alone in their struggles and that their feelings are valid.
 
 ## Features
 
